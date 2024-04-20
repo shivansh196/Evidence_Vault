@@ -10,7 +10,11 @@ import {
   Box,
   Typography,
   Divider,
-  List, ListItem, ListItemText
+  List, ListItem, ListItemText,
+  FormControl,
+  InputLabel,
+  Select,
+  TextField
 } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import Card from '@mui/material/Card';
@@ -21,10 +25,37 @@ import FileStorage from './contracts/FileStorage.json';//imports abi(Application
 
 import Topbar from './scenes/global/Topbar'
 import Dashboard from "./scenes/dashboard";
-// import Contacts from "./scenes/contacts";
 import FAQ from "./scenes/faq";
 
 const ipfsBaseURL = 'https://api.pinata.cloud/pinning/pinFileToIPFS';
+const indianStates = [
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh"
+];
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -106,7 +137,7 @@ function App() {
     formData.append('file', file);
     console.log('file');
     try {
-      const response = await axios.post('http://127.0.0.1:5000//predict_photo', formData, {
+      const response = await axios.post('http://127.0.0.1:5000//predict_audio', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -216,26 +247,96 @@ function App() {
             <Box className='boxclass'>
               {currentAccount && (
                 <>
-                  <Typography variant='h3' sx={{ fontWeight: 'bold', textAlign: 'center' }}>Crime Reporting Form</Typography>
+                  <Box sx={{
+                    display: 'block',
+                    justifyContent: 'center',
+                    padding: '20px',
+                    margin: '20px',
+                    minHeight: '300px',
+                    backgroundColor: (theme.palette.mode === 'dark') ? '#84d1cf' : 'black',
+                    color: (theme.palette.mode === 'dark') ? 'black' : 'white',
+                    borderRadius: '8px'
+                  }}>
+                    <Typography
+                      variant='h3'
+                      sx={{
+                        fontWeight: 'bold',
+                        textAlign: 'center'
+                      }}>Crime Reporting Form
+                    </Typography>
 
-                  {/* Add */}
+                    {/* Type of Crime */}
+                    <FormControl fullWidth defaultValue="" sx={{ marginTop: '16px' }}>
+                      <InputLabel sx={{color: 'black'}} htmlFor="crime-type">Type of Crime</InputLabel>
+                      <Select
+                        native
+                        inputProps={{
+                          name: 'crime-type',
+                          id: 'crime-type',
+                        }}
+                      >
+                        <option value=""></option>
+                        <option value="violent">Violent</option>
+                        <option value="property">Property</option>
+                        <option value="cyber">Cyber</option>
+                      </Select>
+                    </FormControl>
 
+                    {/* Name of State */}
+                    <FormControl fullWidth sx={{ marginTop: '16px' }}>
+                      <InputLabel sx={{color: 'black'}} htmlFor="state-name">Name of State</InputLabel>
+                      <Select
+                        native
+                        inputProps={{
+                          name: 'state-name',
+                          id: 'state-name',
+                        }}
+                      >
+                        <option value=""></option>
+                        {/* Render options for all Indian states */}
+                        {indianStates.map((state, index) => (
+                          <option key={index} value={state}>{state}</option>
+                        ))}
+                      </Select>
+                    </FormControl>
 
-                  <Divider textAlign="left">Upload File</Divider>
-                  <Input type="file" onChange={captureFile} />
-                  <Button
-                    sx={{ padding: '10px', margin: '8px' }}
-                    onClick={uploadFile}
-                    component="uploadFile"
-                    role={undefined}
-                    variant="contained"
-                    tabIndex={-1}
-                    startIcon={<CloudUploadIcon />}
-                  >
-                    Upload file
-                  </Button>
+                    {/* Location */}
+                    <TextField
+                      fullWidth
+                      id="location"
+                      label="Location"
+                      variant="outlined"
+                      margin="normal"
+                      sx={{ marginTop: '16px',color: 'black'}}
+                    />
 
-                  <Typography variant="h5">Uploaded Files</Typography>
+                    {/* Description about Crime */}
+                    <TextField
+                      fullWidth
+                      id="crime-description"
+                      label="Description about Crime"
+                      variant="outlined"
+                      multiline
+                      rows={4}
+                      margin="normal"
+                      sx={{ marginTop: '16px',color:'black' }}
+                    />
+
+                    <Divider textAlign="left" sx={{ marginTop: '16px' }}>Upload File</Divider>
+                    <Input type="file" onChange={captureFile} />
+                    <Button
+                      sx={{ padding: '10px', margin: '8px',backgroundColor: 'blue' }}
+                      onClick={uploadFile}
+                      component="uploadFile"
+                      role={undefined}
+                      variant="contained"
+                      tabIndex={-1}
+                      startIcon={<CloudUploadIcon />}
+                    >
+                      Upload file
+                    </Button>
+                  </Box>
+                  <Typography variant="h5" sx={{ marginTop: '16px' }}>Uploaded Files</Typography>
                   <List>
                     {uploadedFiles.map((file, index) => (
                       <ListItem key={index}>
@@ -246,6 +347,7 @@ function App() {
                     ))}
                   </List>
                 </>
+
               )}
               <Dashboard />
               <FAQ />

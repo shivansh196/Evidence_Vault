@@ -269,13 +269,13 @@ export const mockDataInvoices = [
 export const mockTransactions = [
   {
     txId: "01e4dsa",
-    user: "johndoe",
+    user: "Bihar",
     date: "2021-09-01",
     cost: "43.95",
   },
   {
     txId: "0315dsaa",
-    user: "jackdower",
+    user: "Punjab",
     date: "2022-04-01",
     cost: "133.45",
   },
@@ -319,281 +319,196 @@ export const mockTransactions = [
 
 export const mockBarData = [
   {
-    country: "AD",
-    "hot dog": 137,
-    "hot dogColor": "hsl(229, 70%, 50%)",
-    burger: 96,
-    burgerColor: "hsl(296, 70%, 50%)",
-    kebab: 72,
-    kebabColor: "hsl(97, 70%, 50%)",
-    donut: 140,
-    donutColor: "hsl(340, 70%, 50%)",
+    "state": "Telangana",
+    "murder": 137,
+    "robbery": 96,
+    "assault": 72,
+    "theft": 140,
+    "homicide": 0,
+    "burglary": 0,
+    "murderColor": "hsl(229, 70%, 50%)",
+    "robberyColor": "hsl(296, 70%, 50%)",
+    "assaultColor": "hsl(97, 70%, 50%)",
+    "theftColor": "hsl(340, 70%, 50%)",
+    "homicideColor": "hsl(0, 0%, 0%)",
+    "burglaryColor": "hsl(0, 0%, 0%)"
   },
   {
-    country: "AE",
-    "hot dog": 55,
-    "hot dogColor": "hsl(307, 70%, 50%)",
-    burger: 28,
-    burgerColor: "hsl(111, 70%, 50%)",
-    kebab: 58,
-    kebabColor: "hsl(273, 70%, 50%)",
-    donut: 29,
-    donutColor: "hsl(275, 70%, 50%)",
+    "state": "Odisha",
+    "murder": 55,
+    "robbery": 28,
+    "assault": 58,
+    "theft": 29,
+    "homicide": 0,
+    "burglary": 0,
+    "murderColor": "hsl(307, 70%, 50%)",
+    "robberyColor": "hsl(111, 70%, 50%)",
+    "assaultColor": "hsl(273, 70%, 50%)",
+    "theftColor": "hsl(275, 70%, 50%)",
+    "homicideColor": "hsl(0, 0%, 0%)",
+    "burglaryColor": "hsl(0, 0%, 0%)"
   },
   {
-    country: "AF",
-    "hot dog": 109,
-    "hot dogColor": "hsl(72, 70%, 50%)",
-    burger: 23,
-    burgerColor: "hsl(96, 70%, 50%)",
-    kebab: 34,
-    kebabColor: "hsl(106, 70%, 50%)",
-    donut: 152,
-    donutColor: "hsl(256, 70%, 50%)",
+    "state": "Himachal Pradesh",
+    "murder": 109,
+    "robbery": 23,
+    "assault": 34,
+    "theft": 152,
+    "homicide": 0,
+    "burglary": 0,
+    "murderColor": "hsl(72, 70%, 50%)",
+    "robberyColor": "hsl(96, 70%, 50%)",
+    "assaultColor": "hsl(106, 70%, 50%)",
+    "theftColor": "hsl(256, 70%, 50%)",
+    "homicideColor": "hsl(0, 0%, 0%)",
+    "burglaryColor": "hsl(0, 0%, 0%)"
   },
   {
-    country: "AG",
-    "hot dog": 133,
-    "hot dogColor": "hsl(257, 70%, 50%)",
-    burger: 52,
-    burgerColor: "hsl(326, 70%, 50%)",
-    kebab: 43,
-    kebabColor: "hsl(110, 70%, 50%)",
-    donut: 83,
-    donutColor: "hsl(9, 70%, 50%)",
+    "state": "Punjab",
+    "murder": 133,
+    "robbery": 52,
+    "assault": 43,
+    "theft": 83,
+    "homicide": 0,
+    "burglary": 0,
+    "murderColor": "hsl(257, 70%, 50%)",
+    "robberyColor": "hsl(326, 70%, 50%)",
+    "assaultColor": "hsl(110, 70%, 50%)",
+    "theftColor": "hsl(9, 70%, 50%)",
+    "homicideColor": "hsl(0, 0%, 0%)",
+    "burglaryColor": "hsl(0, 0%, 0%)"
   },
   {
-    country: "AI",
-    "hot dog": 81,
-    "hot dogColor": "hsl(190, 70%, 50%)",
-    burger: 80,
-    burgerColor: "hsl(325, 70%, 50%)",
-    kebab: 112,
-    kebabColor: "hsl(54, 70%, 50%)",
-    donut: 35,
-    donutColor: "hsl(285, 70%, 50%)",
+    "state": "Assam",
+    "murder": 81,
+    "robbery": 80,
+    "assault": 112,
+    "theft": 35,
+    "homicide": 0,
+    "burglary": 0,
+    "murderColor": "hsl(190, 70%, 50%)",
+    "robberyColor": "hsl(325, 70%, 50%)",
+    "assaultColor": "hsl(54, 70%, 50%)",
+    "theftColor": "hsl(285, 70%, 50%)",
+    "homicideColor": "hsl(0, 0%, 0%)",
+    "burglaryColor": "hsl(0, 0%, 0%)"
   },
   {
-    country: "AL",
-    "hot dog": 66,
-    "hot dogColor": "hsl(208, 70%, 50%)",
-    burger: 111,
-    burgerColor: "hsl(334, 70%, 50%)",
-    kebab: 167,
-    kebabColor: "hsl(182, 70%, 50%)",
-    donut: 18,
-    donutColor: "hsl(76, 70%, 50%)",
+    "state": "Bihar",
+    "murder": 66,
+    "robbery": 111,
+    "assault": 167,
+    "theft": 18,
+    "homicide": 0,
+    "burglary": 0,
+    "murderColor": "hsl(208, 70%, 50%)",
+    "robberyColor": "hsl(334, 70%, 50%)",
+    "assaultColor": "hsl(182, 70%, 50%)",
+    "theftColor": "hsl(76, 70%, 50%)",
+    "homicideColor": "hsl(0, 0%, 0%)",
+    "burglaryColor": "hsl(0, 0%, 0%)"
   },
   {
-    country: "AM",
-    "hot dog": 80,
-    "hot dogColor": "hsl(87, 70%, 50%)",
-    burger: 47,
-    burgerColor: "hsl(141, 70%, 50%)",
-    kebab: 158,
-    kebabColor: "hsl(224, 70%, 50%)",
-    donut: 49,
-    donutColor: "hsl(274, 70%, 50%)",
-  },
-];
+    "state": "Uttarakhand",
+    "murder": 80,
+    "robbery": 47,
+    "assault": 158,
+    "theft": 49,
+    "homicide": 0,
+    "burglary": 0,
+    "murderColor": "hsl(87, 70%, 50%)",
+    "robberyColor": "hsl(141, 70%, 50%)",
+    "assaultColor": "hsl(224, 70%, 50%)",
+    "theftColor": "hsl(274, 70%, 50%)",
+    "homicideColor": "hsl(0, 0%, 0%)",
+    "burglaryColor": "hsl(0, 0%, 0%)"
+  }
+]
+;
 
 export const mockPieData = [
-  {
-    id: "hack",
-    label: "hack",
-    value: 239,
-    color: "hsl(104, 70%, 50%)",
-  },
-  {
-    id: "make",
-    label: "make",
-    value: 170,
-    color: "hsl(162, 70%, 50%)",
-  },
-  {
-    id: "go",
-    label: "go",
-    value: 322,
-    color: "hsl(291, 70%, 50%)",
-  },
-  {
-    id: "lisp",
-    label: "lisp",
-    value: 503,
-    color: "hsl(229, 70%, 50%)",
-  },
-  {
-    id: "scala",
-    label: "scala",
-    value: 584,
-    color: "hsl(344, 70%, 50%)",
-  },
+  [
+    {
+      id: "Maharashtra",
+      label: "Maharashtra",
+      value: 239,
+      color: "hsl(104, 70%, 50%)",
+    },
+    {
+      id: "Uttar Pradesh",
+      label: "Uttar Pradesh",
+      value: 170,
+      color: "hsl(162, 70%, 50%)",
+    },
+    {
+      id: "Bihar",
+      label: "Bihar",
+      value: 322,
+      color: "hsl(291, 70%, 50%)",
+    },
+    // You can add more states here if needed
+  ],
+  
 ];
 
 export const mockLineData = [
-  {
-    id: "japan",
-    color: tokens("dark").greenAccent[500],
-    data: [
-      {
-        x: "plane",
-        y: 101,
-      },
-      {
-        x: "helicopter",
-        y: 75,
-      },
-      {
-        x: "boat",
-        y: 36,
-      },
-      {
-        x: "train",
-        y: 216,
-      },
-      {
-        x: "subway",
-        y: 35,
-      },
-      {
-        x: "bus",
-        y: 236,
-      },
-      {
-        x: "car",
-        y: 88,
-      },
-      {
-        x: "moto",
-        y: 232,
-      },
-      {
-        x: "bicycle",
-        y: 281,
-      },
-      {
-        x: "horse",
-        y: 1,
-      },
-      {
-        x: "skateboard",
-        y: 35,
-      },
-      {
-        x: "others",
-        y: 14,
-      },
-    ],
-  },
-  {
-    id: "france",
-    color: tokens("dark").blueAccent[300],
-    data: [
-      {
-        x: "plane",
-        y: 212,
-      },
-      {
-        x: "helicopter",
-        y: 190,
-      },
-      {
-        x: "boat",
-        y: 270,
-      },
-      {
-        x: "train",
-        y: 9,
-      },
-      {
-        x: "subway",
-        y: 75,
-      },
-      {
-        x: "bus",
-        y: 175,
-      },
-      {
-        x: "car",
-        y: 33,
-      },
-      {
-        x: "moto",
-        y: 189,
-      },
-      {
-        x: "bicycle",
-        y: 97,
-      },
-      {
-        x: "horse",
-        y: 87,
-      },
-      {
-        x: "skateboard",
-        y: 299,
-      },
-      {
-        x: "others",
-        y: 251,
-      },
-    ],
-  },
-  {
-    id: "us",
-    color: tokens("dark").redAccent[200],
-    data: [
-      {
-        x: "plane",
-        y: 191,
-      },
-      {
-        x: "helicopter",
-        y: 136,
-      },
-      {
-        x: "boat",
-        y: 91,
-      },
-      {
-        x: "train",
-        y: 190,
-      },
-      {
-        x: "subway",
-        y: 211,
-      },
-      {
-        x: "bus",
-        y: 152,
-      },
-      {
-        x: "car",
-        y: 189,
-      },
-      {
-        x: "moto",
-        y: 152,
-      },
-      {
-        x: "bicycle",
-        y: 8,
-      },
-      {
-        x: "horse",
-        y: 197,
-      },
-      {
-        x: "skateboard",
-        y: 107,
-      },
-      {
-        x: "others",
-        y: 170,
-      },
-    ],
-  },
-];
+  
+    {
+      id: "Maharashtra",
+      color: tokens("dark").greenAccent[500],
+      data: [
+        { x: "murder", y: 101 },
+        { x: "robbery", y: 75 },
+        { x: "assault", y: 36 },
+        { x: "theft", y: 216 },
+        { x: "homicide", y: 35 },
+        { x: "burglary", y: 236 },
+        { x: "fraud", y: 88 },
+        { x: "forgery", y: 232 },
+        { x: "drug_offense", y: 281 },
+        { x: "vandalism", y: 1 },
+        { x: "others", y: 35 },
+        { x: "unknown", y: 14 },
+      ],
+    },
+    {
+      id: "Uttar Pradesh",
+      color: tokens("dark").blueAccent[300],
+      data: [
+        { x: "murder", y: 212 },
+        { x: "robbery", y: 190 },
+        { x: "assault", y: 270 },
+        { x: "theft", y: 9 },
+        { x: "homicide", y: 75 },
+        { x: "burglary", y: 175 },
+        { x: "fraud", y: 33 },
+        { x: "forgery", y: 189 },
+        { x: "drug_offense", y: 97 },
+        { x: "vandalism", y: 87 },
+        { x: "others", y: 299 },
+        { x: "unknown", y: 251 },
+      ],
+    },
+    {
+      id: "Bihar",
+      color: tokens("dark").redAccent[200],
+      data: [
+        { x: "murder", y: 191 },
+        { x: "robbery", y: 136 },
+        { x: "assault", y: 91 },
+        { x: "theft", y: 190 },
+        { x: "homicide", y: 211 },
+        { x: "burglary", y: 152 },
+        { x: "fraud", y: 189 },
+        { x: "forgery", y: 152 },
+        { x: "drug_offense", y: 8 },
+        { x: "vandalism", y: 197 },
+        { x: "others", y: 107 },
+        { x: "unknown", y: 170 },
+      ],
+    },
+  ];
+  ;
 
 export const mockGeographyData = [
   {

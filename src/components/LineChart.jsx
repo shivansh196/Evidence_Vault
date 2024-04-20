@@ -1,7 +1,63 @@
 import { ResponsiveLine } from "@nivo/line";
 import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
-import { mockLineData as data } from "../data/mockData";
+
+const criminalData = [
+  {
+    id: "Maharashtra",
+    color: tokens("dark").greenAccent[500],
+    data: [
+      { x: "murder", y: 101 },
+      { x: "robbery", y: 75 },
+      { x: "assault", y: 36 },
+      { x: "theft", y: 216 },
+      { x: "homicide", y: 35 },
+      { x: "burglary", y: 236 },
+      { x: "fraud", y: 88 },
+      { x: "forgery", y: 232 },
+      { x: "drug_offense", y: 281 },
+      { x: "vandalism", y: 1 },
+      { x: "others", y: 35 },
+      { x: "unknown", y: 14 },
+    ],
+  },
+  {
+    id: "Uttar Pradesh",
+    color: tokens("dark").blueAccent[300],
+    data: [
+      { x: "murder", y: 212 },
+      { x: "robbery", y: 190 },
+      { x: "assault", y: 270 },
+      { x: "theft", y: 9 },
+      { x: "homicide", y: 75 },
+      { x: "burglary", y: 175 },
+      { x: "fraud", y: 33 },
+      { x: "forgery", y: 189 },
+      { x: "drug_offense", y: 97 },
+      { x: "vandalism", y: 87 },
+      { x: "others", y: 299 },
+      { x: "unknown", y: 251 },
+    ],
+  },
+  {
+    id: "Bihar",
+    color: tokens("dark").redAccent[200],
+    data: [
+      { x: "murder", y: 191 },
+      { x: "robbery", y: 136 },
+      { x: "assault", y: 91 },
+      { x: "theft", y: 190 },
+      { x: "homicide", y: 211 },
+      { x: "burglary", y: 152 },
+      { x: "fraud", y: 189 },
+      { x: "forgery", y: 152 },
+      { x: "drug_offense", y: 8 },
+      { x: "vandalism", y: 197 },
+      { x: "others", y: 107 },
+      { x: "unknown", y: 170 },
+    ],
+  },
+];
 
 const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
   const theme = useTheme();
@@ -9,7 +65,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
 
   return (
     <ResponsiveLine
-      data={data}
+      data={criminalData}
       theme={{
         axis: {
           domain: {
@@ -43,7 +99,7 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
           },
         },
       }}
-      colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }} // added
+      colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }}
       margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
       xScale={{ type: "point" }}
       yScale={{
@@ -62,17 +118,17 @@ const LineChart = ({ isCustomLineColors = false, isDashboard = false }) => {
         tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "transportation", // added
+        legend: isDashboard ? undefined : "Type of Crime",
         legendOffset: 36,
         legendPosition: "middle",
       }}
       axisLeft={{
         orient: "left",
-        tickValues: 5, // added
+        tickValues: 5,
         tickSize: 3,
         tickPadding: 5,
         tickRotation: 0,
-        legend: isDashboard ? undefined : "count", // added
+        legend: isDashboard ? undefined : "Count",
         legendOffset: -40,
         legendPosition: "middle",
       }}

@@ -1,11 +1,32 @@
 import { ResponsivePie } from "@nivo/pie";
 import { tokens } from "../theme";
 import { useTheme } from "@mui/material";
-import { mockPieData as data } from "../data/mockData";
 
 const PieChart = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
+  const data = [
+    {
+      id: "Maharashtra",
+      label: "Maharashtra",
+      value: 239,
+      color: "hsl(104, 70%, 50%)",
+    },
+    {
+      id: "Uttar Pradesh",
+      label: "Uttar Pradesh",
+      value: 170,
+      color: "hsl(162, 70%, 50%)",
+    },
+    {
+      id: "Bihar",
+      label: "Bihar",
+      value: 322,
+      color: "hsl(291, 70%, 50%)",
+    },
+  ];
+
   return (
     <ResponsivePie
       data={data}

@@ -8,6 +8,7 @@ import BarChart from "../components/BarChart";
 import StatBox from "../components/StatBox";
 import ProgressCircle from "../components/ProgressCircle";
 
+
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);

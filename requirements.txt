@@ -1,0 +1,7 @@
+tensorflow==2.15.0
+flask
+flask_cors
+librosa 
+numpy 
+gunicorn 
+

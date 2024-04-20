@@ -5,10 +5,10 @@ from flask_cors import CORS
 import numpy as np
 import librosa
 import json
-from flask_cors import CORS  # Import CORS here
+# from flask_cors import CORS  # Import CORS here
 
 app = Flask(__name__)
-CORS(app, resources={r'/*': {'origins': ['http://localhost:3000']}})
+CORS(app)
 
 # Load the audio model
 with open('model.json', 'r') as json_file:
@@ -43,7 +43,7 @@ def predict_audio():
 @app.route('/predict_photo', methods=['GET', 'POST'])
 def predict_photo():
      print("File received:", file.filename)
-     file = request.files['image']
+     file = request.files['file']
      print("File received:", file.filename)
      if file:
         # Load and preprocess the image

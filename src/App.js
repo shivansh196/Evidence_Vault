@@ -106,7 +106,7 @@ function App() {
     formData.append('file', file);
     console.log('file');
     try {
-      const response = await axios.post('http://127.0.0.1:5000/predict_audio', formData, {
+      const response = await axios.post('http://127.0.0.1:5000/predict_photo', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

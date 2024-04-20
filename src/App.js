@@ -1,12 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import Web3 from 'web3';                                 //Web3 library for interacting with the Ethereum blockchain
-import axios from 'axios';                               //interacting to ipfs api
+import Web3 from 'web3'; //Web3 library for interacting with the Ethereum blockchain
+import axios from 'axios';//interacting to ipfs api
+import { ColorModeContext, useMode } from './theme';
+import {
+  Input,
+  CssBaseline,
+  ThemeProvider,
+  Button,
+  Box,
+  Typography,
+  Divider,
+  List, ListItem, ListItemText
+} from '@mui/material';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 
-import FileStorage from './contracts/FileStorage.json';   //imports abi(Application Binary Interface)
+import FileStorage from './contracts/FileStorage.json';//imports abi(Application Binary Interface)
+
+import Topbar from './scenes/global/Topbar'
+import Dashboard from "./scenes/dashboard";
+// import Contacts from "./scenes/contacts";
+import FAQ from "./scenes/faq";
 
 const ipfsBaseURL = 'https://api.pinata.cloud/pinning/pinFileToIPFS';
 
 function App() {
+  const [theme, colorMode] = useMode();
   const [web3, setWeb3] = useState(null);
   const [fileStorage, setFileStorage] = useState(null);
   const [file, setFile] = useState(null);
@@ -15,6 +36,7 @@ function App() {
 
   useEffect(() => {
     connectWallet();
+    // eslint-disable-next-line
   }, []);
 
   const connectWallet = async () => {
@@ -113,47 +135,95 @@ function App() {
     }
   };
 
-  const downloadFile = async (ipfsHash, fileName) => {
-    try {
-      const response = await axios.get(`${ipfsBaseURL}/${ipfsHash}`, { responseType: 'arraybuffer' });
-      const blob = new Blob([response.data]);
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = fileName;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error('Error downloading file:', error.message);
-      alert('Error downloading file. Please try again.');
-    }
-  };
-
   return (
-    <div>
-      <h1>File Storage App</h1>
-      <button onClick={connectWallet}>Connect MetaMask</button>
-      <hr />
-      {currentAccount && (
-        <>
-          <h2>Upload File</h2>
-          <input type="file" onChange={captureFile} />
-          <button onClick={uploadFile}>Upload File</button>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className='app'>
 
-          <h2>Uploaded Files</h2>
-          <ul>
-            {uploadedFiles.map((file, index) => (
-              <li key={index}>
-                <strong>IPFS Hash:</strong> {file.ipfsHash}, <strong>File Name:</strong> {file.fileName}
-                <button onClick={() => downloadFile(file.ipfsHash, file.fileName)}>Download</button>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
-    </div>
+          <main className='content'>
+
+            <Topbar connectWallet={connectWallet} />
+            <Typography variant="h1" sx={{ fontWeight: 'bold',textAlign: 'center' }}>Evidence Vault</Typography>
+            <CardMedia
+              component="img"
+              sx={{ width: '100%' }}
+              image="https://res.cloudinary.com/duovtuwdd/image/upload/v1713614186/uacgdetmdqbsczvv0xcb.png"
+              alt="Live Cloudinary"
+            />
+
+            {!currentAccount &&
+              <>
+              <Divider>LOGIN</Divider>
+              <Card
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  padding: '20px',
+                  margin: '20px',
+                  minHeight: '300px',
+                  backgroundColor: (theme.palette.mode === 'dark') ? '#84d1cf' : 'black',
+                  color: (theme.palette.mode === 'dark') ? 'black' : 'white'
+                }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '20px', margin: '20px' }}>
+                  <CardContent sx={{ flex: '1 0 auto',alignContent: 'center',textAlign: 'center' }}>
+                    <Typography variant="h3" sx={{ fontWeight: 'bold' }}>Login with MetaMask</Typography>
+                    <Button onClick={connectWallet} variant="contained" sx={{padding: '20px', margin: '20px'}}>MetaMask</Button>
+                  </CardContent>
+                </Box>
+                <CardMedia
+                  component="img"
+                  sx={{ width: '30%' }}
+                  image="https://res.cloudinary.com/duovtuwdd/image/upload/v1713611795/md3q4q8nhzyrfru5u6vt.png"
+                  alt="Live cloudinary"
+                />
+              </Card>
+              </>
+            }
+            <Box className='boxclass'>
+              {currentAccount && (
+                <>
+                  <Typography variant='h3' sx={{ fontWeight: 'bold',textAlign: 'center' }}>Crime Reporting Form</Typography>
+                  
+                  {/* Add */}
+                  
+
+                  <Divider textAlign="left">Upload File</Divider>
+                  <Input type="file" onChange={captureFile} />
+                  <Button
+                    sx={{padding: '10px', margin: '8px'}}
+                    onClick={uploadFile}
+                    component="uploadFile"
+                    role={undefined}
+                    variant="contained"
+                    tabIndex={-1}
+                    startIcon={<CloudUploadIcon />}
+                  >
+                    Upload file
+                  </Button>
+                  
+                  <Typography variant="h5">Uploaded Files</Typography>
+                  <List>
+                    {uploadedFiles.map((file, index) => (
+                      <ListItem key={index}>
+                        <ListItemText
+                          primary={`IPFS Hash: ${file.ipfsHash}, File Name: ${file.fileName}`}
+                        />
+                      </ListItem>
+                    ))}
+                  </List>
+                </>
+              )}
+              <Dashboard />
+              <FAQ />
+            </Box>
+
+          </main>
+
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
+
   );
 }
 

@@ -39,6 +39,8 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
+   //Connecting the application to the user's Ethereum wallet
+  //asyn funtion for the connection of wallet (usage of await)
   const connectWallet = async () => {
     try {
       if (window.ethereum) {

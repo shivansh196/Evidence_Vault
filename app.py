@@ -64,7 +64,9 @@ def predict_photo():
         class_label = "FAKE" if prediction < 0.5 else "REAL"
 
         # Return the prediction as JSON
-        return jsonify({'predictions': class_label})
+        response = jsonify({'predictions': class_label})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        return response
      else:
         return "Invalid file"
 

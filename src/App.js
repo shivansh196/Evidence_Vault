@@ -33,6 +33,7 @@ function App() {
   const [file, setFile] = useState(null);
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const [currentAccount, setCurrentAccount] = useState(null);
+  let [prediction, setPrediction] = useState("");
 
   useEffect(() => {
     connectWallet();
@@ -93,9 +94,39 @@ function App() {
     }
   };
 
-  const captureFile = (event) => {
+  const captureFile = async (event) => {
     const file = event.target.files[0];
-    setFile(file);
+    
+    if (!file) {
+      alert('Please select a file.1');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('file', file);
+    console.log('file');
+    try {
+      const response = await axios.post('http://127.0.0.1:5000/predict_photo', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      setPrediction(response.data.predictions);
+      console.log(response.data.predictions);
+      prediction = response.data.predictions;
+      console.log(prediction);
+      if(prediction==='REAL'){
+        setFile(file);
+      }
+      else{
+        setFile(null);
+      }
+
+    } catch (error) {
+      console.error('Error:', error);
+      console.log("2");
+      setPrediction(null);
+    }
   };
 
   const uploadFile = async () => {
@@ -105,7 +136,7 @@ function App() {
     }
 
     if (!file) {
-      alert('Please select a file');
+      alert('Please select a file 2');
       return;
     }
 

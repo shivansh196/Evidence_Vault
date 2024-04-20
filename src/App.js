@@ -40,7 +40,7 @@ function App() {
     // eslint-disable-next-line
   }, []);
 
-   //Connecting the application to the user's Ethereum wallet
+  //Connecting the application to the user's Ethereum wallet
   //asyn funtion for the connection of wallet (usage of await)
   const connectWallet = async () => {
     try {
@@ -96,7 +96,7 @@ function App() {
 
   const captureFile = async (event) => {
     const file = event.target.files[0];
-    
+
     if (!file) {
       alert('Please select a file.1');
       return;
@@ -106,7 +106,7 @@ function App() {
     formData.append('file', file);
     console.log('file');
     try {
-      const response = await axios.post('http://127.0.0.1:5000/predict_photo', formData, {
+      const response = await axios.post('http://127.0.0.1:5000//predict_photo', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -115,10 +115,10 @@ function App() {
       console.log(response.data.predictions);
       prediction = response.data.predictions;
       console.log(prediction);
-      if(prediction==='REAL'){
+      if (prediction === 'REAL') {
         setFile(file);
       }
-      else{
+      else {
         setFile(null);
       }
 
@@ -177,7 +177,7 @@ function App() {
           <main className='content'>
 
             <Topbar connectWallet={connectWallet} />
-            <Typography variant="h1" sx={{ fontWeight: 'bold',textAlign: 'center' }}>Evidence Vault</Typography>
+            <Typography variant="h1" sx={{ fontWeight: 'bold', textAlign: 'center' }}>Evidence Vault</Typography>
             <CardMedia
               component="img"
               sx={{ width: '100%' }}
@@ -187,44 +187,44 @@ function App() {
 
             {!currentAccount &&
               <>
-              <Divider>LOGIN</Divider>
-              <Card
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  padding: '20px',
-                  margin: '20px',
-                  minHeight: '300px',
-                  backgroundColor: (theme.palette.mode === 'dark') ? '#84d1cf' : 'black',
-                  color: (theme.palette.mode === 'dark') ? 'black' : 'white'
-                }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '20px', margin: '20px' }}>
-                  <CardContent sx={{ flex: '1 0 auto',alignContent: 'center',textAlign: 'center' }}>
-                    <Typography variant="h3" sx={{ fontWeight: 'bold' }}>Login with MetaMask</Typography>
-                    <Button onClick={connectWallet} variant="contained" sx={{padding: '20px', margin: '20px'}}>MetaMask</Button>
-                  </CardContent>
-                </Box>
-                <CardMedia
-                  component="img"
-                  sx={{ width: '30%' }}
-                  image="https://res.cloudinary.com/duovtuwdd/image/upload/v1713611795/md3q4q8nhzyrfru5u6vt.png"
-                  alt="Live cloudinary"
-                />
-              </Card>
+                <Divider>LOGIN</Divider>
+                <Card
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    padding: '20px',
+                    margin: '20px',
+                    minHeight: '300px',
+                    backgroundColor: (theme.palette.mode === 'dark') ? '#84d1cf' : 'black',
+                    color: (theme.palette.mode === 'dark') ? 'black' : 'white'
+                  }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '20px', margin: '20px' }}>
+                    <CardContent sx={{ flex: '1 0 auto', alignContent: 'center', textAlign: 'center' }}>
+                      <Typography variant="h3" sx={{ fontWeight: 'bold' }}>Login with MetaMask</Typography>
+                      <Button onClick={connectWallet} variant="contained" sx={{ padding: '20px', margin: '20px' }}>MetaMask</Button>
+                    </CardContent>
+                  </Box>
+                  <CardMedia
+                    component="img"
+                    sx={{ width: '30%' }}
+                    image="https://res.cloudinary.com/duovtuwdd/image/upload/v1713611795/md3q4q8nhzyrfru5u6vt.png"
+                    alt="Live cloudinary"
+                  />
+                </Card>
               </>
             }
             <Box className='boxclass'>
               {currentAccount && (
                 <>
-                  <Typography variant='h3' sx={{ fontWeight: 'bold',textAlign: 'center' }}>Crime Reporting Form</Typography>
-                  
+                  <Typography variant='h3' sx={{ fontWeight: 'bold', textAlign: 'center' }}>Crime Reporting Form</Typography>
+
                   {/* Add */}
-                  
+
 
                   <Divider textAlign="left">Upload File</Divider>
                   <Input type="file" onChange={captureFile} />
                   <Button
-                    sx={{padding: '10px', margin: '8px'}}
+                    sx={{ padding: '10px', margin: '8px' }}
                     onClick={uploadFile}
                     component="uploadFile"
                     role={undefined}
@@ -234,7 +234,7 @@ function App() {
                   >
                     Upload file
                   </Button>
-                  
+
                   <Typography variant="h5">Uploaded Files</Typography>
                   <List>
                     {uploadedFiles.map((file, index) => (

@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Evidence Vault
+<a href="https://hack36.com"> <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height=24px> </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This project was developed by us, **Team Webers**, as a submission for [Hack36 7.0](https://www.hack36.com/)
 
-In the project directory, you can run:
 
-### `npm start`
+## Resources
+- [PPT]()
+- [Video Demo]()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Team Webers
+- [Shivansh Bhardwaj](https://github.com/shivansh196)
+- [Harshvardhan Singh](https://github.com/hvsrathore10)
+- [Yash Mittal](https://github.com/Y-a-s-h-M-i-t-t-a-l)
+  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A dapp that uses Web3 IPFS technology to securely store crime evidence in a tamper-proof manner. The platform prioritizes transparency by incorporating AI and machine learning to maintain and verify the integrity of the evidence and ensure a high level of trust.
 
-### `npm run build`
+## Why We Built This
+We built Evidence Vault to address the issue of unreported criminal cases, providing a secure and anonymous platform for citizens to contribute to justice. Our aim is to empower individuals to overcome the fear of involvement with law enforcement and promote transparency and accountability in addressing crime. Through innovative integration of blockchain, AI/ML technology, and decentralized storage, we strive to create safer and more informed communities, ultimately driving positive societal change.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Technologies Used and Working
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Smart Contracts - We wrote our smart contracts in Solidity. We used truffle to run them on a ganache development network and test them and finally deployed them on the Blockchain. We use these contracts to make implement logic and store evidence through ETH transactions.
+2. Frontend - We used ReactJS for UI and MaterialUI for styling.
+3. Metamask - We utilized MetaMask, a software cryptocurrency wallet designed for Ethereum blockchain interaction. Its browser extension enabled us to access the Ethereum wallet and seamlessly interact with our application.
+4. IPFS - IPFS or InterPlanetary File System, is a peer-to-peer distributed file system that allows users to store and access files in a decentralized manner. Instead of relying on a central server, IPFS uses a distributed network of nodes to store and share files.
+5. Truffle and Ganache - Truffle and Ganache were instrumental in our development process, facilitating smart contract compilation, deployment, and local blockchain testing.
+6. Tensorflow - Used to build the Deepfake Deep Learning Models
+7. Librosa - Supporting feature extraction from audio signals
+8. Flask - Used to build integration APIs serving ML Models
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Made at:
+<a href="https://hack36.com"> <img src="https://i.postimg.cc/FFwvfkGk/built-at-hack36.png" height=24px> </a>

@@ -6,8 +6,8 @@ This project was developed by us, **Team Webers**, as a submission for [Hack36 7
 
 
 ## Resources
-- [PPT]()
-- [Video Demo]()
+- [PPT](https://drive.google.com/file/d/1XCFBdeXtDoqk4OWZdE7nu8lVXSVhwNLR/view?usp=sharing)
+- [Video Demo](https://youtu.be/mW25ISwV5pg?si=U2iS9gxJCZ4tYrBZ)
 
 ## Team Webers
 - [Shivansh Bhardwaj](https://github.com/shivansh196)
